@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --tileWth: 90px;
+  --tileHht: 160px;
+}
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-image: url(https://poglyad.tv/storage/resized/lg/news/987af325-4a2e-4e47-9a76-0f8a636d7e65/16_ukraine.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: animatedbody 60s ease alternate infinite;
+}
+.board {
+  display: flex;
+  flex-basis: calc(var(--tileWth) * 6 + 40px);
+  flex-shrink: 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: calc(var(--tileHht) * 4 + 30px);
+  margin: 0 auto;
+}
+
+.tile {
+  position: relative;
+  width: var(--tileWth);
+  height: var(--tileHht);
+  background-color: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+.tile:active {
+  transform: scale(0.9);
+}
+.border {
+  --borderWidth: 5px;
+  border-radius: var(--borderWidth);
+}
+.border::after {
+  content: "";
+  position: absolute;
+  top: calc(-2 * var(--borderWidth));
+  left: calc(-2 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    gray,
+    #a166ab,
+    #eee,
+    #1098ad,
+    gray,
+    #6fba82
+  );
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+.choosen {
+  --borderWidth: 5px;
+  border-radius: var(--borderWidth);
+  position: relative;
+  top: -2px;
+  left: -2px;
+  animation: animatedchoosen 2s ease alternate infinite;
+}
+.choosen::after {
+  content: "";
+  position: absolute;
+  top: calc(-2 * var(--borderWidth));
+  left: calc(-2 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(
+    60deg,
+    #e9da05,
+    #e9da05,
+    red,
+    #e9da05,
+    #e9da05,
+    #e9da05,
+    red,
+    red
+  );
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes animatedchoosen {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 20% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes animatedbody {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: top left;
+  }
+  100% {
+    background-position: center;
+  }
+}
+.reset{
+position: absolute;
+top: 0;
+padding: 10px;
+right: 0;
+}
+
+.timer{
+position: absolute;
+top: 0;
+padding: 10px;
+left: 0;
+}
+
+p{
+  font-size: 50px;
+}
+.desc{
+  --borderWidth: 5px;
+  border-radius: var(--borderWidth);
+  position: relative;
+  top: -2px;
+  left: -2px;
+  animation: animatedchoosen 2s ease alternate infinite;
+}
+.music{
+  align-self: self-end;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin: -20px;
+  padding: 30px;
+  position: absolute;
+  width: 300px;
+  height: 120px;
+  background: #000;
+  border-radius: 20px;
+}
+
+#playPauseButton{
+  width: 100px;
+  height: 60px;
+  font-size: larger;
+  font-weight: 700;
+  color: #b52a2ad1;
+  border-radius: 10px;
+  border-color: #008cff;
+}
+#leftButton, #rightButton{
+  width: 70px;
+  height: 60px;
+  font-size: larger;
+  font-weight: 1000;
+  color: #03ff18;
+  border-radius: 10px;
+  border-color: #ffd900;
+}
