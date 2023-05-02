@@ -205,5 +205,5 @@ let r = 1
   
 
 let audio = new Audio()
-let array = ['./mp3/bozhe_yake_konchene.mp3', './mp3/Positiff - Ничего Личного.mp3', './mp3/krbk_-_24.mp3', '/mp3/apovabin-around-the-phonk.mp3', '/mp3/veselo_kabanchik.mp3', '/mp3/tensu-pearl.mp3', '/mp3/sometimes.mp3', '/mp3/shadxwbxrn-courage.mp3', '/mp3/phonk-killer-lockdown.mp3', '/mp3/orki.mp3', '/mp3/nasteisha_-_your_girlfriend.mp3', '/mp3/luftwaffe.mp3', '/mp3/gfayno.mp3'];
-audio.src = './mp3/bozhe_yake_konchene.mp3';
+let array = ['./audio/konchene.mp3', './audio/positiff.mp3', './audio/krbk-24.mp3', './audio/apovabin-phonk.mp3', './audio/kabanchik.mp3', './audio/pearl.mp3', './audio/sometimes.mp3', './audio/courage.mp3', './audio/phonk-lockdown.mp3', './audio/orki.mp3', './audio/girlfriend.mp3', './audio/luftwaffe.mp3', './audio/fayno.mp3'];
+audio.src = './audio/konchene.mp3';
